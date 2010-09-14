@@ -37,7 +37,6 @@ filename:
 - method name
 - keyword
 
-botが反応できるkeyword部は1文字という制約があります。
-を追記してください。
+botが反応するキーワードが"g "の場合はそのままスペースをいれてください。
 
 
