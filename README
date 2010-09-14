@@ -35,8 +35,8 @@ plugin/config.yamlに
 filename:
 - module name
 - method name
-- keyword
+- "keyword" 
 
 botが反応するキーワードが"g "の場合はそのままスペースをいれてください。
-
+keywordがスペースで始まる、またはスペースで終わる場合は""でくくってください。
 
