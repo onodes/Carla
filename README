@@ -1,0 +1,43 @@
+////////////////////////////////
+// 概要
+
+Carla(カルラ)はRuby製のIRCBotFrameWorkです。
+主にプラグイン開発と、組み込みのしやすさを目指します。
+
+
+OS:Linux(Ubuntu10.04.1LTS),MacOSXで動作を確認しております。
+Ruby:Ruby1.9.2-p0で動作確認
+LICENSE: Ruby's http://www.ruby-lang.org/ja/LICENSE.txt
+
+//導入
+gem install net-irc hpricot
+ruby start.rbにて動作いたします。
+
+
+//プラグインの作成
+plugin/内にhogehoge.rbを作成する。
+
+hogehoge.rbはmoduleで記述例えば
+
+#hogehoge.rb
+module Hogehoge
+ def fuga
+
+  return param # this param is array Class's instance
+ end
+end
+
+このように1プラグインにつき原則として1メソッドです。
+
+プラグインを作成した上で
+plugin/config.yamlに
+
+filename:
+- module name
+- method name
+- keyword
+
+botが反応できるkeyword部は1文字という制約があります。
+を追記してください。
+
+
