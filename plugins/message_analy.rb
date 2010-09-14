@@ -23,7 +23,8 @@ class Message_analy
   end
 
   def message_analy(message,channel)
-      array = [] 
+      array = []
+      p @keyword_array
       @keyword_array.keys.each{|item|
         keyword = message[0,item.size]
         if @keyword_array.has_key?(keyword)
