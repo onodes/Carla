@@ -1,8 +1,7 @@
 require 'yaml'
 
-module Plusplus
-  def plusplus(message)
-    puts 'yobareta!'
+module Minmin 
+  def minmin(message)
     File.open('./data/karma.yaml','a').close
     file = File.open('./data/karma.yaml','r')
     hash = YAML.load(file)
@@ -12,9 +11,9 @@ module Plusplus
     p hash 
     
     if hash.has_key?(message)
-      hash[message][0] += 1
+      hash[message][1] -= 1
     else
-      hash[message] = [1,0]
+      hash[message] = [0,-1]
     end
    puts "-"*5
     p hash 

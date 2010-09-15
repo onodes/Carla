@@ -23,21 +23,28 @@ class Message_analy
   end
 
   def message_analy(message,channel)
-      array = []
-     # @keyword_array
-      @keyword_array.keys.each{|item|
+    array = []
+    # @keyword_array
+    @keyword_array.keys.each{|item|
+      if item.include?("*")&&item[0] == "*"
+        keyword = message[message.size-item.sub("*","").size,item.sub("*","").size]
+        keyword = "*" + keyword.to_s
+        puts keyword
+      elsif item.include?("*")&&item[item.sub("*","").size] == "*"
+        keyword = message[0,item.sub("*","").size] + "*"
+      else
         keyword = message[0,item.size]
-        keyword = message[0,item.sub("*","").size]+"*" if item.include?('*')&&item[item.size-1] == "*"
-       #message[message.size-a.sub("*","").size,a.sub("*","").size]
-        keyword = "*"+message[message.size-item.sub("*","").size,item.sub("*","").size] if item.include?("*")&&item[0] == "*"
-        p keyword
-        if @keyword_array.has_key?(keyword)
-          word = message.sub(keyword,"")
-           array = eval("#{@keyword_array[keyword]}('#{word}')")
-        end
-       }
-      return array 
-   end
+      end
+    
+      if @keyword_array.has_key?(keyword)         
+        word = message.sub(keyword.sub("*",""),"")
+        array = eval("#{@keyword_array[keyword]}('#{word}')")
+        break
+      end
+    }
+      return array
+
+  end
 
 
   private  
