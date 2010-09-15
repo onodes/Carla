@@ -24,9 +24,13 @@ class Message_analy
 
   def message_analy(message,channel)
       array = []
-      p @keyword_array
+     # @keyword_array
       @keyword_array.keys.each{|item|
         keyword = message[0,item.size]
+        keyword = message[0,item.sub("*","").size]+"*" if item.include?('*')&&item[item.size-1] == "*"
+       #message[message.size-a.sub("*","").size,a.sub("*","").size]
+        keyword = "*"+message[message.size-item.sub("*","").size,item.sub("*","").size] if item.include?("*")&&item[0] == "*"
+        p keyword
         if @keyword_array.has_key?(keyword)
           word = message.sub(keyword,"")
            array = eval("#{@keyword_array[keyword]}('#{word}')")
