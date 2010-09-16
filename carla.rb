@@ -1,5 +1,5 @@
 require 'net/irc'
-require_relative 'plugins/message_analy'
+require_relative 'core/carla_core'
 require 'kconv'
 
 class Carla < Net::IRC::Client

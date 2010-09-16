@@ -7,7 +7,7 @@ yaml = YAML.load_file("plugins/config.yaml")
 keys = yaml.keys
 @keyword_array = {}
 keys.each{|element| 
-  require_relative element
+  require_relative "../plugins/"+ element
   eval("include "+ yaml[element][0])
 }
 
