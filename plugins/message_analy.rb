@@ -80,6 +80,7 @@ class Message_analy
     p @exec_array
     array = []
 
+
     return array << "remove module => #{mod}"
 
   end
