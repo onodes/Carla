@@ -2,4 +2,19 @@
 google_search:
 - Google_search
 - google_search
-- "g " 
+- "g *"
+
+iitomo:
+- Iitomo 
+- iitomo 
+- "iitomo"
+
+plusplus:
+- Plusplus 
+- plusplus
+- "*++"
+
+minmin:
+- Minmin 
+- minmin 
+- "*--"
