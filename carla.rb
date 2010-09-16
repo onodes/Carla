@@ -20,5 +20,6 @@ class Carla < Net::IRC::Client
     array.each{|element| post NOTICE, channel,element.tojis}
   end 
 
+
 end
 
