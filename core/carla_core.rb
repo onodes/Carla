@@ -3,7 +3,7 @@ require 'net/irc'
 puts "dynamic include module"
 
 #Dynamic include
-yaml = YAML.load_file("plugins/config.yaml")
+yaml = YAML.load_file("config.yaml")
 keys = yaml.keys
 @keyword_array = {}
 keys.each{|element| 
@@ -14,7 +14,7 @@ keys.each{|element|
 
 class Message_analy
   def initialize
-    yaml = YAML.load_file("plugins/config.yaml")
+    yaml = YAML.load_file("config.yaml")
     keys = yaml.keys
     @keyword_array = {}
     keys.each{|element|
