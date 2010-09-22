@@ -9,12 +9,11 @@ module Plusplus
     file.close
     #p hash
     #p message
-    p hash 
-    
+    p hash  
     if hash.has_key?(message)
-      hash[message][0] += 1
+      hash[message]["++"] += 1
     else
-      hash[message] = [1,0]
+      hash[message] = {"--" => 0, "++" => 1}
     end
    puts "-"*5
     p hash 
@@ -22,8 +21,8 @@ module Plusplus
     YAML.dump(hash,file)
     file.close
   
-    plus = hash[message][0]
-    min = hash[message][1]
+    plus = hash[message]["++"]
+    min = hash[message]["--"]
     array=[]
     array << "#{message}:#{(plus-min)} (#{plus}++ #{min}--)"
     return array
