@@ -1,0 +1,25 @@
+---
+google_search:
+- Google_search
+- google_search
+- "g *"
+
+iitomo:
+- Iitomo 
+- iitomo 
+- "iitomo"
+
+plusplus:
+- Plusplus 
+- plusplus
+- "*++"
+
+minmin:
+- Minmin 
+- minmin 
+- "*--"
+
+page_title:
+- Page_title
+- page_title
+- "http://*"
